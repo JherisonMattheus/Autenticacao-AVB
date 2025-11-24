@@ -36,8 +36,8 @@ export const register = async (
 
         res.cookie("refreshToken", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true,
+            sameSite: "none",
             maxAge: 60 * 60 * 1000, // 1 hora
             path: "/"
         });
@@ -81,8 +81,8 @@ export const login = async (
 
         res.cookie("refreshToken", token, {
             httpOnly: true,
-            secure: false, 
-            sameSite: "lax",
+            secure: true, 
+            sameSite: "none",
             maxAge: 60 * 60 * 1000, // 1 hora
             path: "/"
         });
@@ -105,8 +105,8 @@ export const logout = async (
 ): Promise<void> => {
     res.clearCookie("refreshToken", {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
+        secure: true,
+        sameSite: "none",
         path: "/",
     });
     res.status(200).json({ ok: true });
