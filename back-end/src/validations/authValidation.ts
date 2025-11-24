@@ -38,7 +38,7 @@ export const validateRegister = async (
             errors.push({ field: "password", message: "A senha deve contém no mínimo 8 caracteres" });
         }
 
-        const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[^/s]+$/;
+        const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[^\s]+$/;
         if (!passwordRegex.test(password)) {
             errors.push({ field: "password", message: "A senha deve conter pelo menos uma letra maiúscula e um número" });
         }

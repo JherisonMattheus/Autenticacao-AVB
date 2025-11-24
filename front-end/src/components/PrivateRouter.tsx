@@ -16,7 +16,6 @@ export default function PrivateRouter({ children }: Props) {
 
     if (loading) return <p className="text-white text-xl">Carregando...</p>
 
-    console.log("PrivateRouter: user =", user);
 
     if(!user) return <Navigate to="/login" replace/>
 
