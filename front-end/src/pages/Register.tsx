@@ -50,7 +50,7 @@ export default function Register() {
                 
                 </div>
 
-                <div className={`flex flex-col items-center ${fieldErrors ? "mb-2" : "mb-9"}`}>
+                <div className={`flex flex-col items-center ${fieldErrors?.name ? "mb-2" : "mb-9"}`}>
                     <label htmlFor="name" className="block w-[300px] text-start text-gray-600 mb-1">
                         Nome
                     </label>
@@ -69,7 +69,7 @@ export default function Register() {
                     }
                 </div>
 
-                <div className={`flex flex-col items-center ${fieldErrors ? "mb-2" : "mb-9"}`}>
+                <div className={`flex flex-col items-center ${fieldErrors?.email ? "mb-2" : "mb-9"}`}>
                     <label htmlFor="email" className="block w-[300px] text-start text-gray-600 mb-1">
                         Email
                     </label>
@@ -88,7 +88,7 @@ export default function Register() {
                     }
                 </div>
 
-                <div className={`flex flex-col items-center ${fieldErrors ? "mb-2" : "mb-9"}`}>
+                <div className={`flex flex-col items-center ${fieldErrors?.password ? "mb-2" : "mb-9"}`}>
                     <label htmlFor="email" className="block w-[300px] text-start text-gray-600 mb-1">
                         Senha
                     </label>

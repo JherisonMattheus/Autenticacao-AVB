@@ -14,7 +14,7 @@ export default function PrivateRouter({ children }: Props) {
 
     const { user, loading } = auth;
 
-    if (loading) return <p>Carregando...</p>
+    if (loading) return <p className="text-white text-xl">Carregando...</p>
 
     console.log("PrivateRouter: user =", user);
 
