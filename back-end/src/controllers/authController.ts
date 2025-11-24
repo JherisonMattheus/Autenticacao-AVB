@@ -32,7 +32,7 @@ export const register = async (
             }
         });
 
-        const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET || "", { expiresIn: "1h"},);
+        const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET || "fallback_secret_for_testing", { expiresIn: "1h"},);
 
         res.cookie("refreshToken", token, {
             httpOnly: true,
@@ -77,7 +77,7 @@ export const login = async (
             return;
         }
 
-        const token = jwt.sign({userId: user.id}, process.env.JWT_SECRET || "", { expiresIn: "1h" });
+        const token = jwt.sign({userId: user.id}, process.env.JWT_SECRET || "fallback_secret_for_testing", { expiresIn: "1h" });
 
         res.cookie("refreshToken", token, {
             httpOnly: true,
