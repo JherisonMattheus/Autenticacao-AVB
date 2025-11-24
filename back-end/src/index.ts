@@ -16,11 +16,8 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser())
 
-const PORT = process.env.PORT || 3000;
 
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
-});
+export default app;
